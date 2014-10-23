@@ -30,5 +30,19 @@
         android:onClick="submitButton"
         android:text="@string/submit"/>
 
+    <TextView
+        android:id="@+id/dateTextView"
+        style="@style/spacer"
+        android:text="dd/MM/yyyy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/spacer"
+        android:onClick="changeDate"
+        android:text="@string/change_date"/>
+
 
 </LinearLayout>

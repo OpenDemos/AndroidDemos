@@ -2,6 +2,7 @@ package com.apps4med.helloapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,10 +12,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.apps4med.helloapp.fragments.DatePickerFragment;
+import com.apps4med.helloapp.util.DateHelper;
+
 
 public class HelloActivity extends Activity {
     TextView topTextView;
     EditText editTextView;
+    TextView dateTextView;
+    DateHelper dateHelper = new DateHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,8 @@ public class HelloActivity extends Activity {
         //Set View object
         topTextView = (TextView) findViewById(R.id.topTextView);
         editTextView = (EditText) findViewById(R.id.editTextView);
+        dateTextView = (TextView) findViewById(R.id.dateTextView);
+        dateTextView.setText(dateHelper.getNowDate());
 
     }
 
@@ -65,5 +73,11 @@ public class HelloActivity extends Activity {
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    public void changeDate(View view) {
+        DatePickerFragment datePickerFragment = new DatePickerFragment();
+        datePickerFragment.setDateTextView(dateTextView);
+        datePickerFragment.show(getFragmentManager(), "dateTimePicker");
     }
 }
