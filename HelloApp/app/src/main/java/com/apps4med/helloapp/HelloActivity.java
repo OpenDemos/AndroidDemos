@@ -124,6 +124,9 @@ public class HelloActivity extends Activity implements ActionBar.OnNavigationLis
             case 1:
                 startActivity(new Intent(HelloActivity.this, SecondActivity.class));
                 break;
+            case 2:
+                startActivity(new Intent(HelloActivity.this, MyListActivity.class));
+                break;
         }
         return false;
     }

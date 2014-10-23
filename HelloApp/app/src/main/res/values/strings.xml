@@ -13,9 +13,11 @@
     <string-array name="action_list">
         <item>Home</item>
         <item>Second</item>
+        <item>List</item>
     </string-array>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="splash_title">Splash!</string>
+    <string name="title_activity_my_list">MyListActivity</string>
 
 </resources>
