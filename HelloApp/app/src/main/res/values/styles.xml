@@ -5,8 +5,28 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="spacer">
+        <item name="android:layout_marginTop">@dimen/activity_spacer</item>
+    </style>
+
+    <style name="nav">
         <item name="android:layout_marginTop">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@color/green</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="orange_background">
+        <item name="android:background">@color/orange</item>
+    </style>
+
+    <style name="splashLabel">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>

@@ -44,5 +44,12 @@
         android:onClick="changeDate"
         android:text="@string/change_date"/>
 
+    <Button
+        android:id="@+id/buttonNavTo2ndActivity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/nav"
+        android:text="@string/go_to_second_activity"/>
+
 
 </LinearLayout>

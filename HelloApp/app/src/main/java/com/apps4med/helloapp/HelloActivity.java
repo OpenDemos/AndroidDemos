@@ -1,25 +1,33 @@
 package com.apps4med.helloapp;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.apps4med.helloapp.fragments.DatePickerFragment;
 import com.apps4med.helloapp.util.DateHelper;
 
-
-public class HelloActivity extends Activity {
+/*
+* http://developer.android.com/guide/topics/ui/actionbar.html
+* */
+public class HelloActivity extends Activity implements ActionBar.OnNavigationListener{
     TextView topTextView;
     EditText editTextView;
     TextView dateTextView;
+    Button buttonNavTo2ndActivity;
     DateHelper dateHelper = new DateHelper();
 
     @Override
@@ -28,10 +36,37 @@ public class HelloActivity extends Activity {
         setContentView(R.layout.activity_hello);
 
         //Set View object
+        buttonNavTo2ndActivity = (Button) findViewById(R.id.buttonNavTo2ndActivity);
         topTextView = (TextView) findViewById(R.id.topTextView);
         editTextView = (EditText) findViewById(R.id.editTextView);
         dateTextView = (TextView) findViewById(R.id.dateTextView);
         dateTextView.setText(dateHelper.getNowDate());
+
+        initActionBar();
+
+        initListeners();
+    }
+
+    void initListeners(){
+        buttonNavTo2ndActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HelloActivity.this, SecondActivity.class));
+            }
+        });
+    }
+
+    void initActionBar(){
+        final ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
+        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(getActionBar().getThemedContext(),
+                R.array.action_list, android.R.layout.simple_spinner_dropdown_item);
+
+        // Set up the dropdown list navigation in the action bar.
+        actionBar.setListNavigationCallbacks(mSpinnerAdapter, this);
 
     }
 
@@ -79,5 +114,17 @@ public class HelloActivity extends Activity {
         DatePickerFragment datePickerFragment = new DatePickerFragment();
         datePickerFragment.setDateTextView(dateTextView);
         datePickerFragment.show(getFragmentManager(), "dateTimePicker");
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(int position, long itemId) {
+        switch (position){
+            case 0:
+                break;
+            case 1:
+                startActivity(new Intent(HelloActivity.this, SecondActivity.class));
+                break;
+        }
+        return false;
     }
 }
