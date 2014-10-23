@@ -1,5 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -9,8 +10,25 @@
     tools:context=".HelloActivity">
 
     <TextView
+        android:id="@+id/topTextView"
         android:text="@string/hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/spacer"/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/spacer"
+        android:onClick="submitButton"
+        android:text="@string/submit"/>
+
+
+</LinearLayout>

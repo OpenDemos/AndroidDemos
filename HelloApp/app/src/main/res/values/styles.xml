@@ -5,4 +5,8 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="spacer">
+        <item name="android:layout_marginTop">@dimen/activity_horizontal_margin</item>
+    </style>
+
 </resources>
