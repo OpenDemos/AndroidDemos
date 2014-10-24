@@ -14,10 +14,35 @@
         <item>Home</item>
         <item>Second</item>
         <item>List</item>
+        <item>Map</item>
     </string-array>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="splash_title">Splash!</string>
     <string name="title_activity_my_list">MyListActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+
+    <!--
+
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=85:84:84:79:A3:DD:67:22:58:4F:B8:F5:63:EA:BD:F9:38:41:23:42%3Bcom.apps4med.helloapp
+
+    You can also add your credentials to an existing key, using this line:
+    85:84:84:79:A3:DD:67:22:58:4F:B8:F5:63:EA:BD:F9:38:41:23:42;com.apps4med.mapapplication
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+
+
+
+    keytool -list -v -keystore /home/iskitsas/.android/debug.keystore
+
+    iskitsas debug: AIzaSyBnTggbO6bo8Mwgw7B-lAxum-cPaWAo15M
+
+    -->
+    <string name="google_maps_key">AIzaSyBnTggbO6bo8Mwgw7B-lAxum-cPaWAo15M</string>
 
 </resources>
