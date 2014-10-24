@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    style="@style/orange_background"
+    tools:context="com.apps4med.helloapp.SplashActivity">
+
+    <TextView
+        android:text="@string/splash_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/splashLabel"
+        android:layout_gravity="center_vertical"/>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_green_apple_small"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>
