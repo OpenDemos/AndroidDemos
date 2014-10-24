@@ -31,7 +31,7 @@ public class HomeActivity extends Activity implements ActionBar.OnNavigationList
 
         // Set up the action bar to show a dropdown list.
         final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
         // Set up the dropdown list navigation in the action bar.
