@@ -1,16 +1,167 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".HomeActivity$PlaceholderFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".HomeActivity$PlaceholderFragment">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/bmiTextView"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi_label" />
+
+        <TextView
+            android:id="@+id/bmiCurrentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi_current_label" />
+
+        <TextView
+            android:id="@+id/bmiCurrentValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold" />
+
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="calculateBmi"
+            android:text="@string/calculate_bmi" />
+
+        <TextView
+            android:id="@+id/birthdateTextView"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/birthdate_label" />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dd/MM/yyyy" />
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeDate"
+            android:text="@string/change_date" />
+
+        <TextView
+            android:id="@+id/weighInLabel"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/weighin_label" />
+
+        <TextView
+            android:id="@+id/lastWeightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_last_weigh_in" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/activity_spacer">
+
+            <Button
+                style="@style/nav_no_spacer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:onClick="changeDate"
+                android:text="@string/week" />
+
+            <Button
+                style="@style/nav_no_spacer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:onClick="changeDate"
+                android:text="@string/weight" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/yourProgressLabel"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/your_progress" />
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick=""
+            android:text="@string/see_your_progress" />
+
+        <TextView
+            android:id="@+id/healthTipsLabel"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/health_tips" />
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick=""
+            android:text="@string/check_tips" />
+
+        <TextView
+            android:id="@+id/healthPricesLabel"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/health_prices" />
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick=""
+            android:text="@string/check_prices" />
+
+        <TextView
+            android:id="@+id/healthMapLabel"
+            style="@style/labelHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_spacer"
+            android:text="@string/health_map" />
+
+        <Button
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick=""
+            android:text="@string/show_map" />
+
+    </LinearLayout>
+</ScrollView>

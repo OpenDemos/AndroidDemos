@@ -7,6 +7,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.SpinnerAdapter;
+
 import com.apps4med.healthious.fragments.PlaceholderFragment;
 
 /**
@@ -31,19 +33,27 @@ public class HomeActivity extends ActionBarActivity implements ActionBar.OnNavig
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
+
+
+        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(getActionBar().getThemedContext(),
+                R.array.action_list, android.R.layout.simple_spinner_dropdown_item);
+
         // Set up the dropdown list navigation in the action bar.
-        actionBar.setListNavigationCallbacks(
-                // Specify a SpinnerAdapter to populate the dropdown list.
-                new ArrayAdapter<String>(
-                        actionBar.getThemedContext(),
-                        android.R.layout.simple_list_item_1,
-                        android.R.id.text1,
-                        new String[] {
-                                getString(R.string.title_section1),
-                                getString(R.string.title_section2),
-                                getString(R.string.title_section3),
-                        }),
-                this);
+        actionBar.setListNavigationCallbacks(mSpinnerAdapter, this);
+
+//        // Set up the dropdown list navigation in the action bar.
+//        actionBar.setListNavigationCallbacks(
+//                // Specify a SpinnerAdapter to populate the dropdown list.
+//                new ArrayAdapter<String>(
+//                        actionBar.getThemedContext(),
+//                        android.R.layout.simple_list_item_1,
+//                        android.R.id.text1,
+//                        new String[] {
+//                                getString(R.string.title_section1),
+//                                getString(R.string.title_section2),
+//                                getString(R.string.title_section3),
+//                        }),
+//                this);
     }
 
     @Override

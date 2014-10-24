@@ -9,5 +9,32 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="splash_title">Healthious</string>
+    <string name="bmi_label">Calculate your BMI</string>
+    <string name="bmi_current_label">Your current BMI is:</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="birthdate_label">Birthdate</string>
+    <string name="change_date">Set date</string>
+    <string name="weighin_label">Set your weight</string>
+    <string name="weigh_in">Weigh in</string>
+    <string name="week">Week</string>
+    <string name="weight">Weight</string>
+    <string name="your_last_weigh_in">Your last weigh in</string>
+    <string name="your_progress">Your progress</string>
+    <string name="see_your_progress">See your progress</string>
+    <string name="health_tips">Health tips</string>
+    <string name="check_tips">Check tips</string>
+    <string name="health_prices">Health Prices</string>
+    <string name="check_prices">Check prices</string>
+    <string name="health_map">Health map</string>
+    <string name="show_map">Show map</string>
+
+    <string-array name="action_list">
+        <item>Home</item>
+        <item>BMI</item>
+        <item>Progress</item>
+        <item>Health tips</item>
+        <item>Health prices</item>
+        <item>Health map</item>
+    </string-array>
 
 </resources>
