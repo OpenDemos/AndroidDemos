@@ -64,7 +64,7 @@ public class CustomPriceListArrayAdapter extends ArrayAdapter<HealthPrice> {
             }
         });
 
-        liPriceTextView.setText(item.getPrice()+" &euro;");
+        liPriceTextView.setText(item.getPrice()+" €");
         liHospitalizationTextView.setText( item.getHospitalization());
         liIdTextView.setText(item.getId());
 
