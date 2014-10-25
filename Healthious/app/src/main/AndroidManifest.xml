@@ -3,6 +3,7 @@
     package="com.apps4med.healthious" >
 
     <application
+        android:name=".app.HealthiousApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_green_apple_small"
         android:label="@string/app_name"

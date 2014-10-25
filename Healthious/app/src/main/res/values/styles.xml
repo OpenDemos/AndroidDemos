@@ -42,4 +42,17 @@
         <item name="android:textSize">@dimen/text_size_large</item>
     </style>
 
+    <style name="labelHeaderMedium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="labelHeaderMediumGreen" parent="labelHeaderMedium">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
 </resources>

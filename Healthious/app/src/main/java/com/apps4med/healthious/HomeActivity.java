@@ -6,10 +6,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.SpinnerAdapter;
 
-import com.apps4med.healthious.fragments.PlaceholderFragment;
+import com.apps4med.healthious.fragments.BMIFragment;
+import com.apps4med.healthious.fragments.HomeFragment;
 
 /**
  * http://developer.android.com/tools/support-library/index.html
@@ -96,9 +98,22 @@ public class HomeActivity extends ActionBarActivity implements ActionBar.OnNavig
     public boolean onNavigationItemSelected(int position, long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch (position) {
+            case 0:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, HomeFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            case 1:
+                goToBMIFragment(null);
+                break;
+        }
         return true;
+    }
+
+    public void goToBMIFragment(View view){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, BMIFragment.newInstance(2))
+                .commit();
     }
 }

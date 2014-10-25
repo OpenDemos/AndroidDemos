@@ -27,6 +27,22 @@
     <string name="check_prices">Check prices</string>
     <string name="health_map">Health map</string>
     <string name="show_map">Show map</string>
+    <string name="not_set">not set..</string>
+    <string name="height">Height</string>
+    <string name="your_bmi_is">Your BMI is:</string>
+    <string name="target_weight">Target weight:</string>
+    <string name="label_male">Male</string>
+    <string name="label_female">Female</string>
+    <string name="alert">Alert</string>
+    <string name="ok">ok</string>
+    <string name="weight_not_properly_set">Weight not properly set</string>
+    <string name="errors">Errors</string>
+    <string name="height_not_properly_set">Height not properly set</string>
+    <string name="label_kgr">%s kgr</string>
+    <string name="kgr">kgr</string>
+    <string name="label_centimeters">cm</string>
+    <string name="classification">Classification:</string>
+    <string name="bmi_saved">Your saved BMI:</string>
 
     <string-array name="action_list">
         <item>Home</item>
