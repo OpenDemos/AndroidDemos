@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
-import android.widget.TextView;
 
 import com.apps4med.healthious.R;
 import com.apps4med.healthious.app.HealthiousApplication;
@@ -19,62 +18,53 @@ import com.apps4med.healthious.app.Tag;
 /**
  * Created by iskitsas on 25/10/2014.
  */
-public class KilogramsFragment extends DialogFragment {
+public class WeekFragment extends DialogFragment {
     private static SessionHandler sSessionHandler;
-    TextView weightTextView;
-    Button weightButton;
+    Button weekButton;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         sSessionHandler = HealthiousApplication.getInstance().getSessionHandler();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Kilograms");
+        builder.setTitle(R.string.week);
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.fragment_kilograms, null);
+        View view = inflater.inflate(R.layout.fragment_week, null);
         final NumberPicker numberPicker = (NumberPicker) view.findViewById(R.id.numberPicker);
-        numberPicker.setMaxValue(150);
-        numberPicker.setMinValue(40);
-        if (sSessionHandler.weight != null) {
-            numberPicker.setValue(sSessionHandler.weight);
+        numberPicker.setMinValue(1);
+        numberPicker.setMaxValue(12);
+
+        if (sSessionHandler.week != null) {
+            numberPicker.setValue(sSessionHandler.week);
         } else {
-            numberPicker.setValue(75);
+            numberPicker.setValue(1);
         }
         numberPicker.setWrapSelectorWheel(true);
         builder.setView(view)
                 .setPositiveButton("Done", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        int kilograms = numberPicker.getValue();
-                        sSessionHandler.weight = kilograms;
-                        if (weightTextView != null)
-                            weightTextView.setText("" + kilograms);
-                        if (weightButton != null) {
-                            weightButton.setText(kilograms + "");
-                            sSessionHandler.saveStringPreference(Tag.lastWeight.name(),kilograms+"");
-                            sSessionHandler.lastWeight = kilograms;
+                        int week = numberPicker.getValue();
+                        sSessionHandler.week = week;
+                        sSessionHandler.saveStringPreference(Tag.lastWeek.name(), week + "");
+                        if (weekButton != null) {
+                            weekButton.setText(week + "");
+                            sSessionHandler.lastWeek = week;
                         }
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        KilogramsFragment.this.getDialog().cancel();
+                        WeekFragment.this.getDialog().cancel();
                     }
                 });
         return builder.create();
     }
 
-    public TextView getWeightTextView() {
-        return weightTextView;
+    public Button getWeekButton() {
+        return weekButton;
     }
 
-    public void setWeightTextView(TextView weightTextView) {
-        this.weightTextView = weightTextView;
-    }
-
-    public Button getWeightButton() {
-        return weightButton;
-    }
-
-    public void setWeightButton(Button weightButton) {
-        this.weightButton = weightButton;
+    public void setWeekButton(Button weekButton) {
+        this.weekButton = weekButton;
     }
 }

@@ -75,6 +75,11 @@
             android:layout_height="wrap_content"
             android:text="@string/your_last_weigh_in" />
 
+        <TextView
+            android:id="@+id/lastWeekWeightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -82,16 +87,17 @@
             android:paddingTop="@dimen/activity_spacer">
 
             <Button
+                android:id="@+id/weekButton"
                 style="@style/nav_no_spacer"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:onClick="changeDate"
                 android:text="@string/week" />
 
             <Button
+                android:id="@+id/weightButton"
                 style="@style/nav_no_spacer"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -101,6 +107,12 @@
                 android:onClick="changeDate"
                 android:text="@string/weight" />
         </LinearLayout>
+        <Button
+            android:id="@+id/saveWeekWeightButton"
+            style="@style/nav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_measurement" />
 
         <TextView
             android:id="@+id/yourProgressLabel"

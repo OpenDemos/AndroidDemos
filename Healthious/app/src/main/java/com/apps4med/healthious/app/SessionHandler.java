@@ -22,7 +22,9 @@ public class SessionHandler {
     public Integer height; // cm
     public Integer weight; // kilograms
     public Double bmi;
-
+    public Integer week;
+    public Integer lastWeight;
+    public Integer lastWeek;
 
 
     public SessionHandler(SharedPreferences preferences) {

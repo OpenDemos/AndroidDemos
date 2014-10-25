@@ -43,6 +43,11 @@
     <string name="label_centimeters">cm</string>
     <string name="classification">Classification:</string>
     <string name="bmi_saved">Your saved BMI:</string>
+    <string name="select_week">Select week:</string>
+    <string name="save_measurement">Save Measurement</string>
+    <string name="cancel">cancel</string>
+    <string name="no_week_or_weight">No week or weight set</string>
+    <string name="save_question">Save?</string>
 
     <string-array name="action_list">
         <item>Home</item>

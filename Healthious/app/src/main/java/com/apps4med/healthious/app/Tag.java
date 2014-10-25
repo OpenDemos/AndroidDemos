@@ -9,5 +9,7 @@ public enum Tag {
     underweight,
     healthy,
     bmi,
-    birthdate
+    birthdate,
+    lastWeek,
+    lastWeight
 }
