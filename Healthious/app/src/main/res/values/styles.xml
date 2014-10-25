@@ -55,4 +55,18 @@
         <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 
+    <style name="ListItemTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="ListItemSubTitle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/text_subtitle</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="ListItemDistance">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>

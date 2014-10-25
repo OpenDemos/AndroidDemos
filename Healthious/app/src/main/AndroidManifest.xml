@@ -26,6 +26,11 @@
             android:name=".ChartActivity"
             android:label="@string/title_activity_chart" >
         </activity>
+        <activity
+            android:name=".PricesListActivity"
+            android:label="@string/title_activity_prices_list" >
+        </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 </manifest>

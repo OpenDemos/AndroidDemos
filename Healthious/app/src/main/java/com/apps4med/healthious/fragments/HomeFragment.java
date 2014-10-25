@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps4med.healthious.ChartActivity;
+import com.apps4med.healthious.PricesListActivity;
 import com.apps4med.healthious.R;
 import com.apps4med.healthious.app.HealthiousApplication;
 import com.apps4med.healthious.app.SessionHandler;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
     Button weightButton;
     Button saveWeekWeightButton;
     Button goToChartButton;
+    Button healthPricesButton;
     TextView lastWeekWeightTextView;
     TextView allMeasurementsTextView;
 
@@ -63,6 +65,7 @@ public class HomeFragment extends Fragment {
         weightButton = (Button) rootView.findViewById(R.id.weightButton);
         saveWeekWeightButton = (Button) rootView.findViewById(R.id.saveWeekWeightButton);
         goToChartButton = (Button) rootView.findViewById(R.id.goToChartButton);
+        healthPricesButton = (Button) rootView.findViewById(R.id.healthPricesButton);
         lastWeekWeightTextView = (TextView) rootView.findViewById(R.id.lastWeekWeightTextView);
         allMeasurementsTextView = (TextView) rootView.findViewById(R.id.allMeasurementsTextView);
 
@@ -171,6 +174,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ChartActivity.class));
+            }
+        });
+
+        healthPricesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PricesListActivity.class));
             }
         });
     }

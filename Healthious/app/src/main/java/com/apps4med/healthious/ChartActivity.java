@@ -2,6 +2,7 @@ package com.apps4med.healthious;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +23,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class ChartActivity extends Activity {
+public class ChartActivity extends ActionBarActivity {
     GraphicalView mChartView;
     private static SessionHandler sSessionHandler;
 

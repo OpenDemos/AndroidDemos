@@ -111,6 +111,12 @@ public class HomeActivity extends ActionBarActivity implements ActionBar.OnNavig
             case 2:
                 startActivity(new Intent(HomeActivity.this, ChartActivity.class));
                 break;
+            case 3:
+
+                break;
+            case 4:
+                startActivity(new Intent(HomeActivity.this, PricesListActivity.class));
+                break;
         }
         return true;
     }

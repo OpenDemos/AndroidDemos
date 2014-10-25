@@ -3,4 +3,5 @@
     <color name="white">#ffffff</color>
     <color name="green">#8DC229</color>
     <color name="orange">#FC7D10</color>
+    <color name="text_subtitle">#808080</color>
 </resources>
