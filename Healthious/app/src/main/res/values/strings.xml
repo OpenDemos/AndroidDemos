@@ -48,6 +48,7 @@
     <string name="cancel">cancel</string>
     <string name="no_week_or_weight">No week or weight set</string>
     <string name="save_question">Save?</string>
+    <string name="all_measurements">All measurements:</string>
 
     <string-array name="action_list">
         <item>Home</item>

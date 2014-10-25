@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment {
     Button weightButton;
     Button saveWeekWeightButton;
     TextView lastWeekWeightTextView;
+    TextView allMeasurementsTextView;
 
     /**
      * The fragment argument representing the section number for this
@@ -59,6 +60,9 @@ public class HomeFragment extends Fragment {
         weightButton = (Button) rootView.findViewById(R.id.weightButton);
         saveWeekWeightButton = (Button) rootView.findViewById(R.id.saveWeekWeightButton);
         lastWeekWeightTextView = (TextView) rootView.findViewById(R.id.lastWeekWeightTextView);
+        allMeasurementsTextView = (TextView) rootView.findViewById(R.id.allMeasurementsTextView);
+
+        showAllMeasurements();
 
         String lastWeek = sSessionHandler.getStringPreference(Tag.lastWeek.name());
         String lastWeight = sSessionHandler.getStringPreference(Tag.lastWeight.name());
@@ -78,6 +82,22 @@ public class HomeFragment extends Fragment {
 
         initListeners();
         return rootView;
+    }
+
+    private void showAllMeasurements() {
+        String ret="";
+        String s;
+        String w;
+        for(int i=1;i<=12;i++){
+            w=Tag.week.name()+"_"+i;
+            s = sSessionHandler.getStringPreference(w);
+            if(!TextUtils.isEmpty(s)){
+                ret+="Week: "+i +", Weight: "+s+"\n";
+            }
+        }
+        if(!TextUtils.isEmpty(ret)) {
+            allMeasurementsTextView.setText(ret);
+        }
     }
 
     void initListeners(){
@@ -117,8 +137,9 @@ public class HomeFragment extends Fragment {
                     builder.setMessage(R.string.save_question);
                     builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            //TODO: save to local storage
-                            lastWeekWeightTextView.setText("Week: "+sSessionHandler.lastWeek +", Weight: "+sSessionHandler.lastWeight);
+                            sSessionHandler.saveStringPreference(Tag.week.name()+"_"+sSessionHandler.lastWeek,sSessionHandler.lastWeight+"");
+                            lastWeekWeightTextView.setText("Week: " + sSessionHandler.lastWeek + ", Weight: " + sSessionHandler.lastWeight);
+                            showAllMeasurements();
                         }
                     });
                     builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
