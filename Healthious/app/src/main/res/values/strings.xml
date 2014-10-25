@@ -59,4 +59,8 @@
         <item>Health map</item>
     </string-array>
 
+    <string name="title_activity_chart">My weights</string>
+    <string name="label_target_weight">Target Weight</string>
+    <string name="label_current_weight">Current weight</string>
+
 </resources>

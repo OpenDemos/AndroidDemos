@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.TextUtils;
+
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -96,6 +98,11 @@ public class AppHelper {
             ret = Tag.healthy.name(); //7.6
         }
         return ret;
+    }
+
+    public static double lossTargetPerWeekKilos(int weeks, double weight, double weightTarget) {
+        BigDecimal bigDecimal = new BigDecimal((weight - weightTarget) / weeks);
+        return bigDecimal.setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
 

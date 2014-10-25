@@ -136,10 +136,10 @@
             android:text="@string/your_progress" />
 
         <Button
+            android:id="@+id/goToChartButton"
             style="@style/nav"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick=""
             android:text="@string/see_your_progress" />
 
         <TextView
@@ -169,7 +169,6 @@
             style="@style/nav"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick=""
             android:text="@string/check_prices" />
 
         <TextView

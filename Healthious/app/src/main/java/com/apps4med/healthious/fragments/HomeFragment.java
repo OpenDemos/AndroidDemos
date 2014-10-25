@@ -2,6 +2,7 @@ package com.apps4med.healthious.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.apps4med.healthious.ChartActivity;
 import com.apps4med.healthious.R;
 import com.apps4med.healthious.app.HealthiousApplication;
 import com.apps4med.healthious.app.SessionHandler;
@@ -27,6 +29,7 @@ public class HomeFragment extends Fragment {
     Button weekButton;
     Button weightButton;
     Button saveWeekWeightButton;
+    Button goToChartButton;
     TextView lastWeekWeightTextView;
     TextView allMeasurementsTextView;
 
@@ -59,6 +62,7 @@ public class HomeFragment extends Fragment {
         weekButton = (Button) rootView.findViewById(R.id.weekButton);
         weightButton = (Button) rootView.findViewById(R.id.weightButton);
         saveWeekWeightButton = (Button) rootView.findViewById(R.id.saveWeekWeightButton);
+        goToChartButton = (Button) rootView.findViewById(R.id.goToChartButton);
         lastWeekWeightTextView = (TextView) rootView.findViewById(R.id.lastWeekWeightTextView);
         allMeasurementsTextView = (TextView) rootView.findViewById(R.id.allMeasurementsTextView);
 
@@ -160,6 +164,13 @@ public class HomeFragment extends Fragment {
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
+            }
+        });
+
+        goToChartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ChartActivity.class));
             }
         });
     }

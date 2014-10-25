@@ -1,6 +1,7 @@
 package com.apps4med.healthious;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -106,6 +107,9 @@ public class HomeActivity extends ActionBarActivity implements ActionBar.OnNavig
                 break;
             case 1:
                 goToBMIFragment(null);
+                break;
+            case 2:
+                startActivity(new Intent(HomeActivity.this, ChartActivity.class));
                 break;
         }
         return true;

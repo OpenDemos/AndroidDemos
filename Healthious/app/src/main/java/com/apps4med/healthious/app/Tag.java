@@ -12,5 +12,5 @@ public enum Tag {
     birthdate,
     lastWeek,
     lastWeight,
-    week
+    weightTarget, week
 }

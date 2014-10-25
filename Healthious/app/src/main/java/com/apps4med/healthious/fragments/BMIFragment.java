@@ -84,6 +84,7 @@ public class BMIFragment extends Fragment {
                     classificationTextView.setText(AppHelper.getWeightClassification(bmi)+"");
 
                     sSessionHandler.saveStringPreference(Tag.bmi.name(),sSessionHandler.bmi+"");
+                    sSessionHandler.saveStringPreference(Tag.weightTarget.name(),sSessionHandler.weightTarget+"");
 
                 }
             }
