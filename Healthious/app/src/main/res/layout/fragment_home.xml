@@ -55,10 +55,10 @@
             android:text="dd/MM/yyyy" />
 
         <Button
+            android:id="@+id/birtdateButton"
             style="@style/nav"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick="changeDate"
             android:text="@string/change_date" />
 
         <TextView

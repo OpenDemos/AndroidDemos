@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps4med.healthious.R;
@@ -19,6 +20,9 @@ import com.apps4med.healthious.app.Tag;
 public class HomeFragment extends Fragment {
     private static SessionHandler sSessionHandler;
     TextView bmiCurrentValue;
+    TextView dateTextView;
+    Button birthdateButton;
+
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -43,9 +47,29 @@ public class HomeFragment extends Fragment {
         sSessionHandler = HealthiousApplication.getInstance().getSessionHandler();
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         bmiCurrentValue = (TextView) rootView.findViewById(R.id.bmiCurrentValue);
-        if(sSessionHandler.bmi != null){
-            bmiCurrentValue.setText(sSessionHandler.getStringPreference(Tag.bmi.name()));
+        dateTextView = (TextView) rootView.findViewById(R.id.dateTextView);
+        birthdateButton = (Button) rootView.findViewById(R.id.birtdateButton);
+        String bmi = sSessionHandler.getStringPreference(Tag.bmi.name());
+        if(!TextUtils.isEmpty(bmi)){
+            bmiCurrentValue.setText(bmi);
         }
+        String birthdate = sSessionHandler.getStringPreference(Tag.birthdate.name());
+        if(!TextUtils.isEmpty(birthdate)){
+            dateTextView.setText(birthdate);
+        }
+
+        initListeners();
         return rootView;
+    }
+
+    void initListeners(){
+        birthdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerFragment datePickerFragment = new DatePickerFragment();
+                datePickerFragment.setDateTextView(dateTextView);
+                datePickerFragment.show(getActivity().getSupportFragmentManager(), "dateTimePicker");
+            }
+        });
     }
 }
