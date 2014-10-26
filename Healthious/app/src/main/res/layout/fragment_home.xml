@@ -151,6 +151,7 @@
             android:text="@string/health_tips" />
 
         <Button
+            android:id="@+id/healthTipsButton"
             style="@style/nav"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
